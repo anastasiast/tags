@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Tags</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <main class="main">
+            <h1>
+                Сложные теги
+            </h1>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;PICTURE&#8250;
+                </h2>
+                <div class="block__example">
+                    <picture>
+                        <source srcset="./img/img_1050x700.jpg" media="(max-width: 1050px)">
+                        <source srcset="./img/img_1220x600.jpeg" media="(max-width: 1220px)">
+                        <img class="img" src="./img/img_1600x758.jpg" alt="Картинка с размерами">
+                    </picture>
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;AUDIO&#8250;
+                </h2>
+                <div class="block__example">
+                    <audio controls>
+                        <source src="./audio/cicada_night_forest.mp3" type="audio/mpeg">
+                        Ваш браузер не поддерживает встроенные аудио
+
+                    </audio>
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;VIDEO&#8250;
+                </h2>
+                <div class="block__example">
+                    <video class="video" controls width="250">
+                        <source src="./video/weather.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает встроенные видео
+                    </video>
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;SOURCE&#8250;
+                </h2>
+                <div class="block__example">
+                    <picture>
+                        <source
+                            srcset="./img/img_1050x700.jpg 1050w, ./img/img_1600x758.jpg 1600w"
+                            sizes="(max-width: 1200px) 50vw, 1050px"
+                        >
+                        <img class="img" src="./img/img_1220x600.jpeg" alt="Тестовое изображение">
+                    </picture>
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;MAP&#8250;
+                </h2>
+                <div class="block__example">
+                    <map name="cats">
+                        <area shape="poly" coords="376,143,490,215,477,247,445,270,423,374,414,409,336,416,322,295,308,234"
+                              href="https://threecats.fandom.com/ru/wiki/%D0%9A%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D0%BB%D1%8C%D0%BA%D0%B0"
+                              target="_blank" alt="Карамелька">
+                        <area shape="poly" coords="567,134,651,165,670,212,673,229,638,313,606,380,556,421,477,416,451,275"
+                              href="https://threecats.fandom.com/ru/wiki/%D0%9A%D0%BE%D1%80%D0%B6%D0%B8%D0%BA"
+                              target="_blank" alt="Коржик">
+                        <area shape="poly" coords="123,73,93,122,67,237,74,374,146,426,300,413,298,242,239,114"
+                              href="https://threecats.fandom.com/ru/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BE%D1%82"
+                              target="_blank" alt="Компот">
+                    </map>
+                    <img class="img" src="./img/img_725x470.jpg" usemap="#cats">
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;EMBED&#8250;
+                </h2>
+                <div class="block__example">
+                    <embed class="embed"
+                           src="./pdf/text.pdf"
+                           type="application/pdf"
+                           width="800"
+                           height="400"
+                    >
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;OBJECT&#8250;
+                </h2>
+                <div class="block__example">
+                    <object
+                            type="application/pdf"
+                            data="./pdf/text.pdf"
+                            width="800"
+                            height="400"
+                    >
+                        <a href="./pdf/text.pdf">Текст</a>
+                    </object>
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;METER&#8250;
+                </h2>
+                <div class="block__example">
+                    <meter
+                            class="meter"
+                            min="1"
+                            max="10"
+                            low="2"
+                            high="8"
+                            optimum="5"
+                            value="9">
+                    </meter>
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;PROGRESS&#8250;
+                </h2>
+                <div class="block__example">
+                    <div class="progress-block">
+                        <progress class="progress-block__line"
+                                  id="progress"
+                                  value="34"
+                                  max="100">
+
+                        </progress>
+                        <button class="progress-block__btn btn"
+                                id="progressButton"
+                                type="button">
+                            Изменить значение до 100
+                        </button>
+                    </div>
+
+
+                    <script>
+                        const progressBtn = document.getElementById('progressButton');
+                        const progressElem = document.getElementById('progress');
+
+                        progressBtn.addEventListener('click', () => {
+                            setInterval(() => {
+                                if (progressElem.value < 100) {
+                                    progressElem.value++;
+                                } else {
+                                    clearInterval();
+                                }
+                            }, 1)
+                        })
+                    </script>
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;CANVAS&#8250;
+                </h2>
+                <div class="block__example">
+                    <canvas id="canvas" width="200" height="200"></canvas>
+
+                    <script>
+                        const canvas = document.getElementById('canvas');
+                        const context = canvas.getContext('2d');
+                        const radius = 70;
+                        const eyeRadius = 10;
+                        const eyeXOffset = 25;
+                        let eyeX = radius+10 - eyeXOffset;
+                        const eyeY = radius+10 - eyeXOffset;
+
+
+                        context.beginPath();
+                        context.arc(radius+10, radius+10, radius, 0, 2 * Math.PI, false);
+                        context.fillStyle = '#FF0';
+                        context.fill();
+                        context.lineWidth = 5;
+                        context.strokeStyle = '#000';
+                        context.stroke();
+
+                        context.beginPath();
+                        context.arc(eyeX, eyeY, eyeRadius, 0, 2 * Math.PI, false);
+                        eyeX = radius+10 + eyeXOffset;
+                        context.arc(eyeX, eyeY, eyeRadius, 0, 2 * Math.PI, false);
+                        context.fillStyle = '#000';
+                        context.fill();
+
+                        context.beginPath();
+                        context.arc(radius+10, radius+10, 50, 0, Math.PI, false);
+                        context.stroke();
+                    </script>
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;DIALOG&#8250;
+                </h2>
+                <div class="block__example">
+                    <button id="dialogBtnOpen" class="btn" type="button">
+                        Открыть диалоговое окно
+                    </button>
+                    <output id="dialogOutput" role="action" name="action"></output>
+                    <dialog id="dialog" aria-label="Приветствие">
+                        <form method="dialog">
+                            <p>
+                                Привет!
+                            </p>
+
+                            <button id="dialogBtnClose" class="btn" value="действие 1">
+                                Выполнить действие 1
+                            </button>
+
+                            <button id="dialogBtnAction" class="btn" value="действие 2">
+                                Выполнить действие 2
+                            </button>
+                        </form>
+
+                    </dialog>
+
+                    <script>
+                        document.getElementById('dialogBtnOpen').addEventListener('click', () => {
+                            document.getElementById('dialog').showModal();
+                        });
+
+
+                        document.getElementById('dialog').addEventListener('close', (
+                                {
+                                    target: dialog
+                                }
+                            ) => {
+                                document.getElementById('dialogOutput').value =
+                                    'Выполнено ' + dialog.returnValue;
+                            })
+                    </script>
+                </div>
+            </section>
+
+            <section class="block">
+                <h2 class="block__header">
+                    &#8249;FIGURE&#8250;
+                </h2>
+                <div class="block__example">
+                    <figure>
+                        <img src="./img/img_725x470.jpg" alt="Три кота">
+                        <figcaption>
+                            Три кота — история о повседневной жизни, отношениях и
+                            приключениях трех маленьких любознательных котят Коржика,
+                            Компота и Карамельки.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <pre>
+document.getElementById('dialogBtnOpen').addEventListener('click', () => {
+    document.getElementById('dialog').showModal();
+});
+
+
+document.getElementById('dialog').addEventListener('close', (
+    {
+        target: dialog
+    }
+) => {
+    document.getElementById('dialogOutput').value =
+        'Выполнено ' + dialog.returnValue;
+})
+                        </pre>
+                        <figcaption>
+                            Фрагмент кода
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+
+    </body>
+</html>
